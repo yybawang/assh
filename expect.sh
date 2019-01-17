@@ -16,7 +16,7 @@ expect {
 	timeout {puts "timeout"; exit}
 	"*yes/no"	{send "yes\r"; exp_continue}
 	"*password:" {send "${password}\r"; exp_continue}
-	"*?ast login" {send "cd ${home}\r"}
+	"*${user}@" {send "cd ${home}\r"}
 }
 # 启用交互
 interact
