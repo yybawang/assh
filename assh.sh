@@ -1,5 +1,6 @@
 #!/bin/bash
 set timeout=1
+pwd=$(cd `dirname $0`; pwd)
 declare -i i=0
 while read line
 do
@@ -27,9 +28,9 @@ do
 
 	echo $i: ${user[$i]}@${ip[$i]}:${port[$i]}
 	i+=1
-done < ./ssh_hosts.conf
+done < ${pwd}/ssh_hosts.conf
 echo -n "输入序号连接(0): "
 read num
 #echo ${user[${num}]} ${ip[${num}]} ${port[${num}]} ${password[${num}]} ${home[${num}]}
 
-exec ./expect.sh ${user[${num}]} ${ip[${num}]} ${port[${num}]} ${password[${num}]} ${home[${num}]}
+exec ${pwd}/expect.sh ${user[${num}]} ${ip[${num}]} ${port[${num}]} ${password[${num}]} ${home[${num}]}
