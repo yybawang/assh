@@ -35,6 +35,7 @@ cd 此项目目录
 vi ~/.bashrc
 # 最后一行加入
 alias assh='/此项目绝对路径/assh.sh'
+alias asftp='/此项目绝对路径/asftp.sh'
 alias assh_conf='vi /此项目绝对路径/ssh_config.conf'
 # 示例
 # alias assh='/var/www/assh/assh.sh'
