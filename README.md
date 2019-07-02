@@ -1,7 +1,7 @@
 # assh
-自动登录ssh脚本，使用 expect ，优化操作和加入配置文件
+自动登录ssh/sftp脚本，使用 expect ，优化操作和加入配置文件
 
-只限制 linux 机器使用
+只限制 linux/Mac 机器使用
 
 
 linux 系统在开发中连接 ssh 很不方便，没有像 windows 有趁手的客户端，但系统自带的终端很得我心，所以写了这个脚本可以继承原生终端的优点，又可以自动连接服务器
@@ -10,6 +10,8 @@ linux 系统在开发中连接 ssh 很不方便，没有像 windows 有趁手的
 ### 第一步，需先安装 expect
 ```bash
 sudo apt install -y expect
+// mac
+brew install expect
 ``` 
 
 centos/redhat 系列需先安装
@@ -18,10 +20,16 @@ centos/redhat 系列需先安装
 sudo yum instal -y expect
 ```
 
+Mac
+
+```bash
+brew install expect
+``` 
+
 > 其他发行版自行使用包管理安装 `expect` 包
 
 ### 第二步，配置服务器连接信息
-配置文件位于项目目录/ssh_hosts.conf，里面有注释说明以及配置格式
+配置文件位于/项目目录/ssh_hosts.conf，里面有注释说明以及配置格式
 
 ### 第三步，运行脚本选择服务器进行连接
 ```bash
